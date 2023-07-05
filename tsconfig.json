@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "removeComments": true,
+        "outDir": "built",
+        "rootDir": "src",
+        "sourceMap": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "pretty": true,
+        "target": "es5",
+        "downlevelIteration": true,
+        "allowSyntheticDefaultImports": true
+    },
+    "include": [
+        "src/node_modules/**/*",
+        "src/tests/**/*"
+    ],
+    "exclude": [
+        "**/*.spec.ts"
+    ]
+}

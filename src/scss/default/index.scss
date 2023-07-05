@@ -1,0 +1,176 @@
+@import "../bs_functions";
+
+$enable-negative-margins: true;
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+$utilities: (
+    "overflow-x": (
+        property: overflow-x,
+        values: auto hidden visible scroll
+    ),
+    "overflow-y": (
+        property: overflow-y,
+        values: auto hidden visible scroll
+    ),
+    "max-height": (
+        property: max-height,
+        class: "mh",
+        values: (
+            200: 200%,
+            300: 300%,
+            400: 400%,
+            500: 500%,
+            600: 600%,
+            700: 700%,
+            800: 800%,
+            900: 900%,
+            1000: 1000%
+        )
+    ),
+    "cursor": (
+        property: cursor,
+        values: help wait none pointer wait not-allowed grab
+    ),
+    "translate-start": (
+      property: transform,
+      class: translate-start,
+      values: (
+        null: translate(-100%, -100%),
+        x: translateX(-100%),
+        y: translateY(-100%),
+      )
+    ),
+    "border-style": (
+        property: border-style,
+        values: dotted 
+    ),
+    "z-index": (
+		property: z-index,
+		class: z-index,
+		values: (
+			1: 1000,
+			2: 1020,
+			3: 1030,
+			4: 1040,
+			5: 1050,
+			6: 1060,
+			7: 1070,
+			8: 1080
+		)
+	),
+);
+
+@import "../bs_variables";
+@import "../bs_components";
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.hover-overlay {
+    opacity: 0 !important;
+    &:hover {
+        opacity: 1 !important;
+        background: rgba(var(--bs-dark-rgb), 0.5) !important;
+        a {
+            color: $white;
+            @include transition(none);
+        }
+    }
+}
+.bg-gray-800 {
+    background: $gray-800 !important;
+}
+.table td.fit, 
+.table th.fit {
+    white-space: nowrap;
+    width: 1%;
+}
+.mm-window {
+    z-index: 9999;
+}
+.modal {
+    background: rgba(0, 0, 0, 0.5);
+}
+.border-dashed {
+    border-style: dashed !important;
+}
+.border-dotted {
+    border-style: dotted !important;
+}
+.border-start-dotted, .border-end-dotted, .border-top-dotted, .border-bottom-dotted {
+    border-right-style: dotted !important;
+}
+.modal-xlg {
+    max-width: 90% !important;
+}
+.dropdown-menu {
+    z-index: 9999;
+}
+.mm-heading-icon {
+    font-size: 0.8em;
+}
+.mm-heading-description {
+    font-size: 0.5em;
+    font-weight: 400;
+}
+.card-header {
+    min-height: 42px !important;
+    padding: 5px !important;
+}
+.mm-navbar-avatar {
+    max-height: 28px;
+}
+.has-popover {
+    position: relative;
+    .popover-arrow::after {
+        border-right-color: rgb(var(--bs-dark-rgb));
+    }
+    .popover {
+        display: none;
+        background-color: rgb(var(--bs-dark-rgb));
+        color: rgb(var(--bs-white-rgb));
+    }
+    &:hover {
+        .popover {
+            display: block;
+        }
+    }
+}
+.flex-1 {
+    flex: 1 !important;
+}
+.h-100 {
+    height: 100% !important;
+}
+.w-sidenav {
+    width: 4.0rem !important;
+}
+textarea {
+    resize: none !important;
+}
+.fw-semibold {
+    font-weight: 600 !important;
+}
+.fs-7 {
+    font-size: 0.9rem !important;
+}
+.fs-8 {
+    font-size: 0.8rem !important;
+}
+.fs-9 {
+    font-size: 0.7rem !important;
+}
+pre {
+    white-space: pre-wrap;
+}
